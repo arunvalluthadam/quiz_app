@@ -1,0 +1,71 @@
+register and login for quiz master
+space for add quiz questions and options by quiz master
+
+register and login for quiz users
+list of quiz by link and each link have questions and options
+if the answer which user ticked is correct show  the sign for correct or if wrong show the wrong sign
+
+pre-requisite
+-------------
+	django, javascript, ajax
+
+
+master
+------
+	login
+	register
+	add questions and options
+
+user
+-----
+	login
+	register
+	show questions and options
+	show mark and link to next quiz
+
+-----------
+html files
+----------
+	index.html
+	login.html
+	master_signup.html
+	my_result.html
+	student_signup.html
+	add_questions.html
+	start_quiz.html
+	show_questions.html
+	profile.html
+
+
+common
+-------
+	home
+
+before login
+------------
+	register (dropdown menu)
+	login
+
+master login
+------------
+	add question
+	full name
+	logout
+
+student login
+-------------
+	start quiz
+	full name
+	my results
+	logout
+
+
+-------------------
+field for register
+-------------------
+	first name
+	last name
+	username
+	email
+	password
+	password again

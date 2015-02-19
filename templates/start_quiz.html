@@ -1,0 +1,138 @@
+{% extends "base.html" %}
+
+  {% block title %}
+    <title>Start Quiz</title>
+  {% endblock %}
+
+  {% block css %}
+    <script type="text/javascript">
+      var option1 = "{{check_questions.option1}}";
+      var option2 = "{{check_questions.option2}}";
+      var option3 = "{{check_questions.option3}}";
+      var option4 = "{{check_questions.option4}}";
+      var correct_answer = "{{check_questions.correct_answer}}";
+      var count = 0;
+
+      
+
+      function updateoption1() {
+        if (option1 == correct_answer){
+          document.getElementById('write_text').innerHTML = "<center><h2 style='color:green'>Good Correct Answer !!!</h2></center>";
+          return true;
+        }
+        else {
+          document.getElementById('write_text').innerHTML = "<center><h2 style='color:red'>wrong Answer Try Again</h2></center>";
+          return false;
+        }
+      }
+
+      function updateoption2() {
+        if (option2 == correct_answer){
+          document.getElementById('write_text').innerHTML = "<center><h2 style='color:green'>Good Correct Answer !!!</h2></center>";
+          return true;
+        }
+        else {
+          document.getElementById('write_text').innerHTML = "<center><h2 style='color:red'>wrong Answer Try Again</h2></center>";
+          return false;
+        }
+      }
+
+      function updateoption3() {
+        if (option3 == correct_answer){
+          document.getElementById('write_text').innerHTML = "<center><h2 style='color:green'>Good Correct Answer !!!</h2></center>";
+          return true;
+        }
+        else {
+          document.getElementById('write_text').innerHTML = "<center><h2 style='color:red'>wrong Answer Try Again</h2></center>";
+          return false;
+        }
+      }
+
+      function updateoption4() {
+        if (option4 == correct_answer){
+          document.getElementById('write_text').innerHTML = "<center><h2 style='color:green'>Good Correct Answer !!!</h2></center>";
+          return true;
+        }
+        else {
+          document.getElementById('write_text').innerHTML = "<center><h2 style='color:red'>wrong Answer Try Again</h2></center>";
+          return false;
+        }
+      }
+
+    </script>
+  {% endblock %}
+
+  {% block content %}
+
+    <div class="container">
+      <br><br><br><br>
+      <div class="starter-template img img-rounded" style="text-align:left;max-width:1000px;">
+        <center><h2>Quiz Question</h2></center>
+
+        <!-- <div class="row">
+          <div class="col-sm-offset-6">
+            <div id="write_text"></div>
+          </div>
+        </div> -->
+
+
+        <br>
+        <div>
+          <h4>{{check_questions.question}}</h4>
+        </div>
+        <hr class="phone-visible">
+        <form action="." onsubmit="/start-quiz/{{check_questions.id}}" method="post">
+          <div class="row">
+            <div class="col-sm-offset-1">
+              <div class="radio">
+                <label>
+                  <input type="radio" name="optionsRadios" id="optionradio1" value="option1" onchange="return updateoption1()">
+                  {{check_questions.option1}}
+                </label>
+              </div>
+              <div class="radio">
+                <label>
+                  <input type="radio" name="optionsRadios" id="optionradio2" value="option2" onchange="return updateoption2()">
+                  {{check_questions.option2}}
+                </label>
+              </div>
+              <div class="radio">
+                <label>
+                  <input type="radio" name="optionsRadios" id="optionradio3" value="option3" onchange="return updateoption3()">
+                  {{check_questions.option3}}
+                </label>
+              </div>
+              <div class="radio">
+                <label>
+                  <input type="radio" name="optionsRadios" id="optionradio4" value="option4" onchange="return updateoption4()">
+                  {{check_questions.option4}}
+                </label>
+              </div>
+            </div>
+            <div class="col-sm-offset-6 col-sm-5 img img-rounded" style="background-color:#eee;border:1px solid">
+              <div id="write_text"></div>
+            </div>
+            
+            <br>
+            <!-- <div class="form-group">
+              <div class="col-sm-offset-2 col-sm-4">
+                <button type="submit" class="btn btn-success">Next Question</button>
+              </div>
+            </div> -->
+          </div>
+          <br>
+        </form>
+
+        
+        <div class="row">
+          <div class="col-sm-offset-2 ">
+            <a href="/start-quiz-index" class="btn btn-success">Next Question</a>
+            <a href="/my-results" class="col-sm-offset-5 btn btn-info">Check Your Result</a>
+          </div>
+        </div>
+      </div>
+      <br>
+
+    </div><!-- /.container -->
+
+  {% endblock %}

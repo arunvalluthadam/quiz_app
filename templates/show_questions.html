@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+  {% block title %}
+    <title>Quiz Application</title>
+  {% endblock %}
+
+  {% block content %}
+
+    <div class="container">
+      <br><br><br><br>
+      <div class="starter-template img img-rounded" style="text-align:left;max-width:1200px;">
+        <div class="row">
+          <div class="col-sm-offset-4">
+            <h2>Your Quiz Question</h2>
+          </div>
+          <div class="col-sm-offset-9">
+            <a class="btn btn-danger" href="/add-questions">Add New Questions</a>
+          </div>
+        </div>
+        <br>
+        {% for show in show_questions %}
+          <div class="row">
+            <div class="col-sm-offset-1 col-sm-10">
+              <h4>{{show.question}}</h4>
+            </div>
+          </div>
+          <hr class="phone-visible">
+          <div class="row">
+            <div class="col-sm-offset-2">
+              <ul>
+                <li>{{show.option1}}</li>
+                <li>{{show.option2}}</li>
+                <li>{{show.option3}}</li>
+                <li>{{show.option4}}</li>
+              </ul>
+            </div>
+            <br>
+          </div>
+          <hr class="phone-visible">
+          <hr class="phone-visible">
+          <br>
+        {% endfor %}
+      </div>
+
+    </div><!-- /.container -->
+
+  {% endblock %}
